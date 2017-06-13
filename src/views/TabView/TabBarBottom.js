@@ -15,6 +15,7 @@ import type {
 import type { TabScene } from './TabView';
 
 type DefaultProps = {
+  indicatorColor: string,
   activeTintColor: string,
   activeBackgroundColor: string,
   inactiveTintColor: string,
@@ -23,6 +24,7 @@ type DefaultProps = {
 };
 
 type Props = {
+  indicatorColor: string,
   activeTintColor: string,
   activeBackgroundColor: string,
   inactiveTintColor: string,
@@ -49,6 +51,7 @@ export default class TabBarBottom
     inactiveBackgroundColor: 'transparent',
     showLabel: true,
     showIcon: true,
+    indicatorColor: '#C8DC33'
   };
 
   props: Props;
@@ -61,6 +64,7 @@ export default class TabBarBottom
       inactiveTintColor,
       labelStyle,
       showLabel,
+      indicatorColor,
     } = this.props;
     if (showLabel === false) {
       return null;
@@ -103,6 +107,7 @@ export default class TabBarBottom
       inactiveTintColor,
       renderIcon,
       showIcon,
+      indicatorColor,
     } = this.props;
     if (showIcon === false) {
       return null;
@@ -111,6 +116,7 @@ export default class TabBarBottom
       <TabBarIcon
         position={position}
         navigation={navigation}
+        indicatorColor={indicatorColor}
         activeTintColor={activeTintColor}
         inactiveTintColor={inactiveTintColor}
         renderIcon={renderIcon}
