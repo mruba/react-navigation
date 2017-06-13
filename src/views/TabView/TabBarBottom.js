@@ -24,7 +24,7 @@ type DefaultProps = {
 };
 
 type Props = {
-  indicatorColor: string,
+  indicatorStyle?: Style,
   activeTintColor: string,
   activeBackgroundColor: string,
   inactiveTintColor: string,
@@ -51,7 +51,6 @@ export default class TabBarBottom
     inactiveBackgroundColor: 'transparent',
     showLabel: true,
     showIcon: true,
-    indicatorColor: '#C8DC33'
   };
 
   props: Props;
@@ -64,7 +63,6 @@ export default class TabBarBottom
       inactiveTintColor,
       labelStyle,
       showLabel,
-      indicatorColor,
     } = this.props;
     if (showLabel === false) {
       return null;
@@ -107,7 +105,7 @@ export default class TabBarBottom
       inactiveTintColor,
       renderIcon,
       showIcon,
-      indicatorColor,
+      indicatorStyle,
     } = this.props;
     if (showIcon === false) {
       return null;
@@ -116,7 +114,7 @@ export default class TabBarBottom
       <TabBarIcon
         position={position}
         navigation={navigation}
-        indicatorColor={indicatorColor}
+        indicatorStyle={indicatorStyle}
         activeTintColor={activeTintColor}
         inactiveTintColor={inactiveTintColor}
         renderIcon={renderIcon}

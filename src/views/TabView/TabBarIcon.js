@@ -14,7 +14,7 @@ import type { TabScene } from './TabView';
 
 type Props = {
   activeTintColor: string,
-  indicatorColor: string,
+  indicatorStyle?: Style,
   inactiveTintColor: string,
   scene: TabScene,
   position: Animated.Value,
@@ -32,7 +32,7 @@ export default class TabBarIcon extends PureComponent<void, Props, void> {
       scene,
       navigation,
       activeTintColor,
-      indicatorColor,
+      indicatorStyle,
       inactiveTintColor,
       style,
     } = this.props;
@@ -52,7 +52,7 @@ export default class TabBarIcon extends PureComponent<void, Props, void> {
     // active and inactive one, so we can fade between them.
     return (
       <View style={style}>
-        <Animated.View style={[styles.icon, { opacity: activeOpacity, borderBottomColor: indicatorColor, borderBottomWidth: 5}]}>
+        <Animated.View style={[styles.icon, indicatorStyle, { opacity: activeOpacity }]}>
           {this.props.renderIcon({
             route,
             index,
